@@ -1,16 +1,9 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name findingFalconeApp
- * @description
- * # findingFalconeApp
- *
- * Main module of the application.
- */
+angular.module('findingFalconeApp.directives', []);
+angular.module('findingFalconeApp.routes', ['ui.router']);
 
-angular.module('findingFalcone.directives', []);
 angular.module('findingFalconeApp', [
-	'ui.router',
-	'findingFalcone.directives'
+	'findingFalconeApp.directives',
+	'findingFalconeApp.routes'
 ]);

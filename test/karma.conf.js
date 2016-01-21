@@ -31,7 +31,11 @@ module.exports = function (config) {
 			'bower_components/angular-mocks/angular-mocks.js',
 			// endbower
 			"app/scripts/core/app.js",
+
 			"app/scripts/common/directives/directive.falconeHeader.js",
+			"app/scripts/common/directives/directive.falconeFooter.js",
+
+			"app/scripts/common/routes/routes.js",
 
 			"app/scripts/core/controllers/ctrl.main.js",
 
