@@ -9,7 +9,9 @@
 	</div>
 	<div class="row">
 		<div class="col l3 m6 s12" ng-repeat="n in [] | repeat:1:maxDestinations">
-
+			<select class="" ng-model="selectedDesinations['destination_' + $index]" material-select watch>
+				<option ng-repeat="destination in destinations">{{destination.name}}</option>
+			</select>
 		</div>
 	</div>
 </div>
