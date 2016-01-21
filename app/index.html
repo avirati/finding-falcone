@@ -16,7 +16,8 @@
 	<!-- endbuild -->
 </head>
 <body ng-app="findingFalconeApp" ng-controller="ctrl.main">
-
+	<falcone-header></falcone-header>
+	<falcone-footer></falcone-footer>
 	<!-- build:js(.) scripts/vendor.js -->
 	<!-- bower:js -->
 	<script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -30,6 +31,10 @@
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/core/app.js"></script>
+
+	<script src="scripts/common/directives/directive.falconeHeader.js"></script>
+	<script src="scripts/common/directives/directive.falconeFooter.js"></script>
+
 	<script src="scripts/core/controllers/ctrl.main.js"></script>
 	<!-- endbuild -->
 </body>

@@ -8,5 +8,9 @@
  *
  * Main module of the application.
  */
-angular
-  .module('findingFalconeApp', []);
+
+angular.module('findingFalcone.directives', []);
+angular.module('findingFalconeApp', [
+	'ui.router',
+	'findingFalcone.directives'
+]);
