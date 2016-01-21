@@ -8,10 +8,6 @@
  * Controller of the findingFalconeApp
  */
 angular.module('findingFalconeApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('ctrl.main', [ '$scope', function ($scope) {
+		$scope.msg = 'hello';
+	}]);
