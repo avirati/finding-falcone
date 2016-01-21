@@ -38,6 +38,7 @@ module.exports = function (config) {
 			"app/scripts/common/routes/routes.js",
 
 			"app/scripts/core/controllers/ctrl.main.js",
+			"app/scripts/core/controllers/pages/ctrl.findFalcone.js",
 
 			"test/mock/**/*.js",
 			"test/spec/**/*.js"

@@ -2,5 +2,5 @@
 
 angular.module('findingFalconeApp')
 	.controller('ctrl.findFalcone', [ '$scope', function ($scope) {
-		$scope.msg = 'hello';
+		$scope.msg = 'hello 2';
 	}]);
