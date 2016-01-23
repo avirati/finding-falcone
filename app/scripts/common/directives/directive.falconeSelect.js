@@ -1,24 +1,29 @@
+'use strict'
+
 angular.module("findingFalconeApp.directives")
 	.directive("falconeSelect", ["$timeout", function ($timeout) {
 		return {
-			restrict: 'A',
+			restrict: 'E',
 			scope: {
 				repeatOn: '=',
 				falconeModel: '='
 			},
-			template:   '<option value="" disabled selected>Select</option>' +
-						'<option ng-repeat="o in repeatOn" ng-bind="o[label]"></option>',
+			templateUrl: 'views/common/templates/falcone-select.html',
 			link: function (scope, elem, attrs) {
 				scope.label = attrs.label;
-				scope.$watch('repeatOn', function () {
-					if(typeof scope.repeatOn !== typeof undefined) {
-						$timeout(function () {
-							elem.material_select();
-						})
+			},
+
+			controller: function ($scope) {
+				angular.extend($scope, {
+					showFlag: false
+				})
+
+				angular.extend($scope, {
+					update: function (o) {
+						$scope.falconeModel = o;
+						$scope.showFlag = false;
 					}
-				});
-
-
+				})
 			}
 		}
 	}]);
