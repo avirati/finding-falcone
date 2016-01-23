@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<image class="full-image center falcone-image" src="images/falcone.png"></image>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 center">
+			<div class="card-panel teal" ng-if="result.status === 'success'">
+				<p class="white-text">Falcone was found in {{result.planet_name}} Planet. Good Job !!</p>
+				<h5 class="white-text">Total time taken for the Expedition : {{total_time}}</h5>
+			</div>
+			<div class="card-panel red lighten-2" ng-if="result.status !== 'success'">
+				<span class="white-text">Alas ! Falcone could not be found in the planets you chose :( :(</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -9,15 +9,15 @@
 	</div>
 	<div class="row">
 		<div class="col l3 m6 s12" ng-repeat="n in [] | repeat:1:maxDestinations">
-			<falcone-select class="" falcone-model="selectedDesinations['destination_' + $index]" repeat-on="destinations" label="name" placeholder="Select Planet" exclude-items="selectedPlanets" on-change="updatePlanets()"></falcone-select>
-			<p class="planet-distance-info" ng-if="selectedDesinations['destination_' + $index]">
-				Distance from Lengaburu : {{ selectedDesinations['destination_' + $index].distance }}
+			<falcone-select class="" falcone-model="selectedPlanets[$index]" repeat-on="destinations" label="name" placeholder="Select Planet" exclude-items="selectedPlanets" ></falcone-select>
+			<p class="planet-distance-info" ng-if="selectedPlanets[$index]">
+				Distance from Lengaburu : {{ selectedPlanets[$index].distance }}
 			</p>
-			<falcone-options ng-if="selectedDesinations['destination_' + $index]" falcone-model="selectedPods['vehicle_' + $index]" repeat-on="vehicles" label="name" identifier="$index" on-change="updateVehicles()" target-planet="selectedDesinations['destination_' + $index]"></falcone-options>
-			<div class="vehicle-info" ng-if="selectedPods['vehicle_' + $index]">
-				<p>Selected Vehicle : {{selectedPods['vehicle_' + $index].name}}</p>
-				<p>Vehicle Speed : {{selectedPods['vehicle_' + $index].speed}}</p>
-				<p>Max Distance : {{selectedPods['vehicle_' + $index].max_distance}}</p>
+			<falcone-options ng-if="selectedPlanets[$index]" falcone-model="selectedVehicles[$index]" repeat-on="vehicles" label="name" identifier="$index" target-planet="selectedPlanets[$index]"></falcone-options>
+			<div class="vehicle-info" ng-if="selectedVehicles[$index]">
+				<p>Selected Vehicle : {{selectedVehicles[$index].name}}</p>
+				<p>Vehicle Speed : {{selectedVehicles[$index].speed}}</p>
+				<p>Max Distance : {{selectedVehicles[$index].max_distance}}</p>
 			</div>
 		</div>
 	</div>

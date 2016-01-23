@@ -25,14 +25,22 @@ angular.module('findingFalconeApp.factories')
 		httpFactory.getToken = function () {
 			return $http({
 				method: 'POST',
-				url: BASE_URL + 'token'
+				url: BASE_URL + 'token',
+				headers: {
+					'Accept': 'application/json'
+				}
 			})
 		}
 
-		httpFactory.find = function () {
+		httpFactory.find = function (json) {
 			return $http({
 				method: 'POST',
-				url: BASE_URL + 'find'
+				url: BASE_URL + 'find',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				data: json
 			})
 		}
 

@@ -1,16 +1,11 @@
 'use strict';
 
 angular.module('findingFalconeApp')
-	.controller('ctrl.findFalcone', [ '$scope', 'httpFactory', function ($scope, httpFactory) {
-		$scope.msg = 'hello 2';
-
+	.controller('ctrl.findFalcone', [ '$scope', '$state', 'httpFactory', function ($scope, $state, httpFactory) {
 		window.scope = $scope;
 		//$scope variables
 		angular.extend($scope, {
-			selectedDesinations: {},
 			selectedPlanets: [],
-
-			selectedPods: {},
 			selectedVehicles: []
 		})
 
@@ -28,32 +23,27 @@ angular.module('findingFalconeApp')
 						$scope.vehicles = data;
 					})
 			},
-			updatePlanets: function (planet) {
-				$scope.selectedPlanets = Object.keys($scope.selectedDesinations)
-					.map(function (k) {
-						return $scope.selectedDesinations[k];
-					})
-					.filter(function (o) {
-						return o !== undefined && o !== null;
-					})
-			},
-			updateVehicles: function (vehicle) {
-				$scope.selectedVehicles = Object.keys($scope.selectedPods)
-					.map(function (k) {
-						return $scope.selectedPods[k];
-					})
-					.filter(function (o) {
-						return o !== undefined && o !== null;
-					})
-			},
 			startSearch: function () {
 				httpFactory.getToken()
 					.success(function (data) {
+						var totalTime = 0, i;
+
 						data.planet_names = [];
 						data.vehicle_names = [];
+
+						for(i = 0; i < $scope.maxDestinations; i++) {
+							var planet = $scope.selectedPlanets[i];
+							var vehicle = $scope.selectedVehicles[i];
+
+							data.planet_names.push(planet.name);
+							data.vehicle_names.push(vehicle.name);
+
+							totalTime += planet.distance / vehicle.speed;
+						}
+
 						httpFactory.find(data)
 							.success(function (_data) {
-								console.log(_data);
+								$state.go('expeditionResult', { total_time: totalTime, result: _data})
 							})
 					})
 			},

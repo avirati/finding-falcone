@@ -7,8 +7,7 @@ angular.module("findingFalconeApp.directives")
 			scope: {
 				repeatOn: '=',
 				falconeModel: '=',
-				excludeItems: '=',
-				onChange: '&'
+				excludeItems: '='
 			},
 			templateUrl: 'views/common/templates/falcone-select.html',
 			link: function (scope, elem, attrs) {
@@ -16,7 +15,7 @@ angular.module("findingFalconeApp.directives")
 				scope.placeholder = attrs.placeholder;
 			},
 
-			controller: function ($scope, $timeout) {
+			controller: function ($scope) {
 				angular.extend($scope, {
 					showFlag: false
 				})
@@ -25,9 +24,6 @@ angular.module("findingFalconeApp.directives")
 					update: function (o) {
 						$scope.falconeModel = o;
 						$scope.showFlag = false;
-						$timeout(function () {
-							$scope.onChange.call(null, o);
-						})
 					}
 				})
 			}

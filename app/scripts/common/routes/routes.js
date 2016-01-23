@@ -11,4 +11,13 @@ angular.module('findingFalconeApp.routes')
 				templateUrl: 'views/pages/find-falcone.html',
 				controller: 'ctrl.findFalcone'
 			})
+			.state('expeditionResult', {
+				url: "/result",
+				templateUrl: 'views/pages/result.html',
+				controller: 'ctrl.result',
+				params: {
+					result: null,
+					total_time: null
+				}
+			})
 	}]);

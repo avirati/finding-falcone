@@ -3,7 +3,7 @@
 	<input type="text" class="select-dropdown" readonly="true" ng-model="falconeModel[label]" placeholder="{{ placeholder || 'Select...' }}" ng-click="showFlag = !showFlag">
 	<ul class="dropdown-content select-dropdown" style="display: block;position: absolute;z-index: 1000;top: 0px;left: 0px;opacity: 1; width: 100%;" ng-show="showFlag">
 		<li class="disabled active"><span>{{ placeholder || 'Select...' }}</span></li>
-		<li ng-repeat="obj in repeatOn" ng-click="update(obj)" ng-if="excludeItems.indexOf(obj) < 0">
+		<li ng-repeat="obj in repeatOn" ng-click="update(obj)" ng-class="{'disabled': excludeItems.indexOf(obj) >= 0}">
 			<span>{{obj[label]}}</span>
 		</li>
 	</ul>
