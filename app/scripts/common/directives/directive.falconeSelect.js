@@ -1,19 +1,22 @@
 'use strict'
 
 angular.module("findingFalconeApp.directives")
-	.directive("falconeSelect", ["$timeout", function ($timeout) {
+	.directive("falconeSelect", [function () {
 		return {
 			restrict: 'E',
 			scope: {
 				repeatOn: '=',
-				falconeModel: '='
+				falconeModel: '=',
+				excludeItems: '=',
+				onChange: '&'
 			},
 			templateUrl: 'views/common/templates/falcone-select.html',
 			link: function (scope, elem, attrs) {
 				scope.label = attrs.label;
+				scope.placeholder = attrs.placeholder;
 			},
 
-			controller: function ($scope) {
+			controller: function ($scope, $timeout) {
 				angular.extend($scope, {
 					showFlag: false
 				})
@@ -22,6 +25,9 @@ angular.module("findingFalconeApp.directives")
 					update: function (o) {
 						$scope.falconeModel = o;
 						$scope.showFlag = false;
+						$timeout(function () {
+							$scope.onChange.call(null, o);
+						})
 					}
 				})
 			}

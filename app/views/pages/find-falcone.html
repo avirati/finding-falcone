@@ -9,7 +9,7 @@
 	</div>
 	<div class="row">
 		<div class="col l3 m6 s12" ng-repeat="n in [] | repeat:1:maxDestinations">
-			<falcone-select class="" falcone-model="selectedDesinations['destination_' + $index]" repeat-on="destinations" label="name"></falcone-select>
+			<falcone-select class="" falcone-model="selectedDesinations['destination_' + $index]" repeat-on="destinations" label="name" placeholder="Select Planet" exclude-items="selectedPlanets" on-change="updatePlanets()"></falcone-select>
 		</div>
 	</div>
 </div>

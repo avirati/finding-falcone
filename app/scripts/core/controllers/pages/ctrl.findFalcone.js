@@ -7,7 +7,8 @@ angular.module('findingFalconeApp')
 		window.scope = $scope;
 		//$scope variables
 		angular.extend($scope, {
-			selectedDesinations: {}
+			selectedDesinations: {},
+			selectedPlanets: []
 		})
 
 		//$scope methods
@@ -16,6 +17,15 @@ angular.module('findingFalconeApp')
 				httpFactory.getDestinations()
 					.success(function (data) {
 						$scope.destinations = data;
+					})
+			},
+			updatePlanets: function (planet) {
+				$scope.selectedPlanets = Object.keys($scope.selectedDesinations)
+					.map(function (k) {
+						return $scope.selectedDesinations[k];
+					})
+					.filter(function (o) {
+						return o !== undefined && o !== null;
 					})
 			},
 			init: function () {
