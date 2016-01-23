@@ -13,7 +13,7 @@
 			<p class="planet-distance-info" ng-if="selectedDesinations['destination_' + $index]">
 				Distance from Lengaburu : {{ selectedDesinations['destination_' + $index].distance }}
 			</p>
-			<falcone-options ng-if="selectedDesinations['destination_' + $index]" falcone-model="selectedPods['vehicle_' + $index]" repeat-on="vehicles" label="name" identifier="$index" on-change="updateVehicles()"></falcone-options>
+			<falcone-options ng-if="selectedDesinations['destination_' + $index]" falcone-model="selectedPods['vehicle_' + $index]" repeat-on="vehicles" label="name" identifier="$index" on-change="updateVehicles()" target-planet="selectedDesinations['destination_' + $index]"></falcone-options>
 			<div class="vehicle-info" ng-if="selectedPods['vehicle_' + $index]">
 				<p>Selected Vehicle : {{selectedPods['vehicle_' + $index].name}}</p>
 				<p>Vehicle Speed : {{selectedPods['vehicle_' + $index].speed}}</p>

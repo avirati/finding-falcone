@@ -1,4 +1,4 @@
-<p ng-repeat="obj in repeatOn" ng-class="{'exhausted': obj.total_no <= 0}">
+<p ng-repeat="obj in repeatOn" ng-class="{'exhausted': obj.total_no <= 0, 'incapable': obj.max_distance < targetPlanet.distance}">
 	<input name="group{{identifier}}" type="radio" id="option{{identifier}}{{$index}}" />
 	<label for="option{{identifier}}{{$index}}" ng-click="update(obj)">{{obj[label]}} ({{obj.total_no}})</label>
 </p>

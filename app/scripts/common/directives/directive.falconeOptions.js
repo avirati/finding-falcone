@@ -8,6 +8,7 @@ angular.module("findingFalconeApp.directives")
 				repeatOn: '=',
 				identifier: '=',
 				falconeModel: '=',
+				targetPlanet: '=',
 				onChange: '&'
 			},
 			templateUrl: 'views/common/templates/falcone-options.html',
