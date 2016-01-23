@@ -15,5 +15,12 @@ angular.module('findingFalconeApp.factories')
 			})
 		}
 
+		httpFactory.getVehicles = function () {
+			return $http({
+				method: 'GET',
+				url: BASE_URL + 'vehicles'
+			})
+		}
+
 		return httpFactory;
 	}])

@@ -13,6 +13,7 @@
 			<p ng-if="selectedDesinations['destination_' + $index]">
 				Distance from Lengaburu : {{ selectedDesinations['destination_' + $index].distance }}
 			</p>
+			<falcone-options ng-if="selectedDesinations['destination_' + $index]" falcone-model="selectedVehicles['vehicle_' + $index]" repeat-on="vehicles" label="name" identifier="$index"></falcone-options>
 		</div>
 	</div>
 </div>

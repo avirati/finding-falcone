@@ -19,6 +19,12 @@ angular.module('findingFalconeApp')
 						$scope.destinations = data;
 					})
 			},
+			getVehicles: function () {
+				httpFactory.getVehicles()
+					.success(function (data) {
+						$scope.vehicles = data;
+					})
+			},
 			updatePlanets: function (planet) {
 				$scope.selectedPlanets = Object.keys($scope.selectedDesinations)
 					.map(function (k) {
@@ -30,6 +36,7 @@ angular.module('findingFalconeApp')
 			},
 			init: function () {
 				$scope.getDestinations();
+				$scope.getVehicles();
 			}
 		})
 
