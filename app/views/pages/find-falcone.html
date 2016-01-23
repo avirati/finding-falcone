@@ -21,4 +21,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="row" ng-class="{'disabled': selectedPlanets.length !== maxDestinations || selectedVehicles.length !== maxDestinations}">
+		<a class="waves-effect waves-light btn-large right" ng-click="startSearch()"><i class="material-icons right">search</i>Start Expedition</a>
+	</div>
 </div>

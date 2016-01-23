@@ -46,6 +46,17 @@ angular.module('findingFalconeApp')
 						return o !== undefined && o !== null;
 					})
 			},
+			startSearch: function () {
+				httpFactory.getToken()
+					.success(function (data) {
+						data.planet_names = [];
+						data.vehicle_names = [];
+						httpFactory.find(data)
+							.success(function (_data) {
+								console.log(_data);
+							})
+					})
+			},
 			init: function () {
 				$scope.getDestinations();
 				$scope.getVehicles();
