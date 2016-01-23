@@ -1,4 +1,4 @@
-<p ng-repeat="obj in repeatOn">
+<p ng-repeat="obj in repeatOn" ng-class="{'exhausted': obj.total_no <= 0}">
 	<input name="group{{identifier}}" type="radio" id="option{{identifier}}{{$index}}" />
-	<label for="option{{identifier}}{{$index}}">{{obj[label]}}</label>
+	<label for="option{{identifier}}{{$index}}" ng-click="update(obj)">{{obj[label]}} ({{obj.total_no}})</label>
 </p>

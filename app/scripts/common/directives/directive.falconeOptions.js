@@ -1,12 +1,14 @@
 'use strict'
 
 angular.module("findingFalconeApp.directives")
-	.directive("falconeOptions", [function () {
+	.directive("falconeOptions", [ '$timeout', function ($timeout) {
 		return {
 			restrict: 'E',
 			scope: {
 				repeatOn: '=',
-				identifier: '='
+				identifier: '=',
+				falconeModel: '=',
+				onChange: '&'
 			},
 			templateUrl: 'views/common/templates/falcone-options.html',
 			link: function (scope, elem, attrs) {
@@ -14,9 +16,25 @@ angular.module("findingFalconeApp.directives")
 			},
 
 			controller: function ($scope, $timeout) {
+				var seletedVehicle;
 
 				angular.extend($scope, {
+					update: function (o) {
+						if(seletedVehicle) {
+							seletedVehicle.total_no++;
+						}
 
+						seletedVehicle = o;
+
+						if(o.total_no > 0) {
+							o.total_no--;
+
+							$scope.falconeModel = o;
+							$timeout(function () {
+								$scope.onChange.call(null, o);
+							})
+						}
+					}
 				})
 			}
 		}

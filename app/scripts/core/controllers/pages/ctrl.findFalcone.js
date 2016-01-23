@@ -8,7 +8,10 @@ angular.module('findingFalconeApp')
 		//$scope variables
 		angular.extend($scope, {
 			selectedDesinations: {},
-			selectedPlanets: []
+			selectedPlanets: [],
+
+			selectedPods: {},
+			selectedVehicles: []
 		})
 
 		//$scope methods
@@ -29,6 +32,15 @@ angular.module('findingFalconeApp')
 				$scope.selectedPlanets = Object.keys($scope.selectedDesinations)
 					.map(function (k) {
 						return $scope.selectedDesinations[k];
+					})
+					.filter(function (o) {
+						return o !== undefined && o !== null;
+					})
+			},
+			updateVehicles: function (vehicle) {
+				$scope.selectedVehicles = Object.keys($scope.selectedPods)
+					.map(function (k) {
+						return $scope.selectedPods[k];
 					})
 					.filter(function (o) {
 						return o !== undefined && o !== null;

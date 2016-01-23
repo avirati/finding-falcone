@@ -25,3 +25,17 @@ footer.page-footer {
 		text-align: center;
 	}
 }
+
+.vehicle-info, .planet-distance-info {
+	font-size: 12px;
+	color: #888;
+}
+
+.planet-distance-info {
+	color: #00897b;
+}
+
+.exhausted {
+	opacity: 0.6;
+	pointer-events: none;
+}
