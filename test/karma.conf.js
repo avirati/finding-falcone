@@ -37,6 +37,8 @@ module.exports = function (config) {
 
 			"app/scripts/common/services/service.constants.js",
 
+			"app/scripts/common/filters/filters.repeat.js",
+
 			"app/scripts/common/routes/routes.js",
 
 			"app/scripts/core/controllers/ctrl.main.js",
