@@ -11,7 +11,7 @@ describe("Unit: Testing Filters", function () {
 			$filter = _$filter_;
 		}));
 
-		it('should contain a constants Service', function () {
+		it('should contain a repeat Filter', function () {
 			expect($filter('repeat')).not.toEqual(null);
 		});
 

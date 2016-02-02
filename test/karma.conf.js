@@ -39,6 +39,8 @@ module.exports = function (config) {
 
 			"app/scripts/common/filters/filters.repeat.js",
 
+			"app/scripts/common/factories/factories.http.js",
+
 			"app/scripts/common/routes/routes.js",
 
 			"app/scripts/core/controllers/ctrl.main.js",
