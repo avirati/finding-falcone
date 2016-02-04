@@ -14,17 +14,18 @@ describe("Unit: Testing Directives", function () {
 
 			elem = angular.element('<falcone-header></falcone-header>');
 
-			$compile(elem)($scope);
+			compiledElem = $compile(elem)($scope);
 
 			$rootScope.$digest();
 
 		}));
 
-		it('should', function () {
-			console.log(compiledElem);
+		it('should check if the element was loaded', function () {
+			expect(compiledElem).not.toEqual(null);
 		})
 
-
-
+		it('should check whether header has "Finding Falcone" written', function () {
+			expect(compiledElem.find('a.brand-logo').html().trim()).toEqual('Finding Falcone')
+		})
 	});
 });
