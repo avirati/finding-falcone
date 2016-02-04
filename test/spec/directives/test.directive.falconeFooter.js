@@ -3,7 +3,7 @@
 describe("Unit: Testing Directives", function () {
 
 	describe("Footer Element:", function () {
-		var $scope, elem, compiledElem;
+		var $scope, elem;
 
 		beforeEach(module('findingFalconeApp.directives'));
 		beforeEach(module('htmlTemplates'));
@@ -12,20 +12,17 @@ describe("Unit: Testing Directives", function () {
 
 			$scope = $rootScope.$new();
 
-			elem = angular.element('<falcone-footer></falcone-footer>');
-
-			compiledElem = $compile(elem)($scope);
-
+			elem = $compile('<falcone-footer></falcone-footer>')($scope);
 			$rootScope.$digest();
 
 		}));
 
 		it('should check if the element was loaded', function () {
-			expect(compiledElem).not.toEqual(null);
+			expect(elem).not.toEqual(null);
 		})
 
 		it('should check whether this project was made with ♥ ;)', function () {
-			expect(compiledElem.find('div.footer-copyright').html().trim().indexOf('♥')).toBeGreaterThan(-1);
+			expect(elem.find('div.footer-copyright').html().trim().indexOf('♥')).toBeGreaterThan(-1);
 		})
 	});
 });
