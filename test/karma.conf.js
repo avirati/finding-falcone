@@ -32,16 +32,15 @@ module.exports = function (config) {
 			// endbower
 			"app/scripts/core/app.js",
 
-			"app/scripts/common/directives/directive.falconeHeader.js",
-			"app/scripts/common/directives/directive.falconeFooter.js",
+			"app/scripts/common/directives/*.js",
 
-			"app/scripts/common/services/service.constants.js",
+			"app/scripts/common/services/*.js",
 
-			"app/scripts/common/filters/filters.repeat.js",
+			"app/scripts/common/filters/*.js",
 
-			"app/scripts/common/factories/factories.http.js",
+			"app/scripts/common/factories/*.js",
 
-			"app/scripts/common/routes/routes.js",
+			"app/scripts/common/routes/*.js",
 
 			"app/scripts/core/controllers/ctrl.main.js",
 			"app/scripts/core/controllers/pages/ctrl.findFalcone.js",
