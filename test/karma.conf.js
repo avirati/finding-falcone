@@ -46,7 +46,9 @@ module.exports = function (config) {
 			"app/scripts/core/controllers/ctrl.main.js",
 			"app/scripts/core/controllers/pages/ctrl.findFalcone.js",
 
-			"test/spec/**/*.js"
+			"test/spec/**/*.js",
+
+			"app/views/**/*.html"
 		],
 
 		// list of files / patterns to exclude
@@ -70,7 +72,8 @@ module.exports = function (config) {
 		// Which plugins to enable
 		plugins: [
 			"karma-phantomjs-launcher",
-			"karma-jasmine"
+			"karma-jasmine",
+			"karma-ng-html2js-preprocessor"
 		],
 
 		// Continuous Integration mode
@@ -89,5 +92,16 @@ module.exports = function (config) {
 		// },
 		// URL root prevent conflicts with the site root
 		// urlRoot: '_karma_'
+
+		preprocessors: {
+			"app/views/**/*.html": ["ng-html2js"]
+		},
+
+		ngHtml2JsPreprocessor: {
+			// If your build process changes the path to your templates,
+			// use stripPrefix and prependPrefix to adjust it.
+			stripPrefix: "app/",
+			moduleName: 'htmlTemplates'
+		},
 	});
 };
