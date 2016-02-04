@@ -33,7 +33,7 @@ describe("Unit: Testing Directives", function () {
 		})
 
 		it('should check if number of li(s) in the rendered template is equal to number of objects in destinations', function () {
-			expect(elem.find('ul').children().length - 1).toEqual(6);   //Deduct 1 for the placeholder li element. (Refer Template)
+			expect(elem.find('ul').children().length - 1).toEqual($scope.destinations.length);   //Deduct 1 for the placeholder li element. (Refer Template)
 		})
 
 		it('should check if falcone-model index pre selects the right element', function () {
