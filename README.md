@@ -19,9 +19,10 @@ Dillinger uses a number of open source projects to work properly:
 
 ### Build
 
-You need Grunt installed globally:
+You need Grunt and Compass installed globally:
 
 ```sh
+$ gem install compass 
 $ npm install -g grunt
 ```
 
