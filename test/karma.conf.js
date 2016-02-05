@@ -44,6 +44,7 @@ module.exports = function (config) {
 
 			"app/scripts/core/controllers/ctrl.main.js",
 			"app/scripts/core/controllers/pages/ctrl.findFalcone.js",
+			"app/scripts/core/controllers/pages/ctrl.result.js",
 
 			"test/spec/**/*.js",
 
