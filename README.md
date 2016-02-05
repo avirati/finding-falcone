@@ -1,12 +1,51 @@
-# finding-falcone
+# Finding Falcone
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+Finding Falcone is a task from GeekTrust.in
 
-## Build & development
+### Tech
 
-Run `grunt` for building and `grunt serve` for preview.
+Dillinger uses a number of open source projects to work properly:
 
-## Testing
+* [AngularJS]
+* [Angular Materialize]
+* [Materialize]
+* [jQuery]
+* [Jasmine]
+* [Karma]
 
-Running `grunt test` will run the unit tests with karma.
+
+### Build
+
+You need Grunt installed globally:
+
+```sh
+$ npm install -g grunt
+```
+
+```sh
+$ git clone https://github.com/avirati/finding-falcone finding-falcone
+$ cd finding-falcone
+$ npm install
+$ bower install
+$ grunt
+$ cd dist/
+$ python -m SimpleHTTPServer <PORT>
+```
+
+### Run the project
+
+open http://localhost:<PORT>
+
+### Testing
+
+$ npm install -g karma
+$ cd test/
+$ karma start
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
