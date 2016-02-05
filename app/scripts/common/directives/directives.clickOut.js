@@ -1,5 +1,16 @@
 'use strict'
 
+/**
+ * @author Avinash Verma
+ *
+ * Attached to an element as attribute, this will trigger if click event is detected outside of that element
+ * @example
+ * <div click-out="doSomething()"></div>
+ *
+ *
+ * @param {clickOut} methodToCall: upon event trigger, methodToCall will be called
+ *
+ */
 angular.module("findingFalconeApp.directives")
 	.directive('clickOut', ['$window', '$parse', function ($window, $parse) {
 		return {

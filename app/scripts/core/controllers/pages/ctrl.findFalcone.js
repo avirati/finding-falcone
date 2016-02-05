@@ -15,11 +15,17 @@ angular.module('findingFalconeApp')
 					.success(function (data) {
 						$scope.destinations = data;
 					})
+					.error(function (err) {
+						console.log(err);
+					})
 			},
 			getVehicles: function () {
 				httpFactory.getVehicles()
 					.success(function (data) {
 						$scope.vehicles = data;
+					})
+					.error(function (err) {
+						console.log(err);
 					})
 			},
 			startSearch: function () {
@@ -44,6 +50,12 @@ angular.module('findingFalconeApp')
 							.success(function (_data) {
 								$state.go('expeditionResult', { total_time: totalTime, result: _data})
 							})
+							.error(function (err) {
+								console.log(err);
+							})
+					})
+					.error(function (err) {
+						console.log(err);
 					})
 			},
 			init: function () {

@@ -1,5 +1,13 @@
 'use strict'
 
+/**
+ * @author Avinash Verma
+ *
+ * Governs routing in the App
+ *
+ * @example N/A
+ * @param N/A
+ */
 angular.module('findingFalconeApp.routes')
 	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 

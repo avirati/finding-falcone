@@ -1,5 +1,25 @@
 'use strict'
 
+/**
+ * @author Avinash Verma
+ *
+ * Renders radio options
+ * @example
+ * <falcone-options falcone-model="objToPreselect" repeat-on="collection" label="labelToShowFromData"
+ *      target-planet="planetWhichOwnsThisFleet"></falcone-options>
+ *
+ *
+ *
+ * @param {falconeModel} objToPreselect: Preselects objToPreselect in the list
+ *
+ * @param {repeatOn} collection: Iterates on this list and renders the element
+ *
+ * @param {label} labelToShowFromData: For every 'obj' in 'collection' it will
+ * look for obj[labelToShowFromData] and that will be the radio label
+ *
+ * @param {planetWhichOwnsThisFleet} This will allow the radio options to perform
+ * calculations and validations (such as checking if no more vehicles available)
+ */
 angular.module("findingFalconeApp.directives")
 	.directive("falconeOptions", [ function () {
 		return {
