@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 describe("Unit: Testing Directives", function () {
 
@@ -19,10 +19,10 @@ describe("Unit: Testing Directives", function () {
 
 		it('should check if the element was loaded', function () {
 			expect(elem).not.toEqual(null);
-		})
+		});
 
 		it('should check whether this project was made with ♥ ;)', function () {
 			expect(elem.find('div.footer-copyright').html().trim().indexOf('♥')).toBeGreaterThan(-1);
-		})
+		});
 	});
 });

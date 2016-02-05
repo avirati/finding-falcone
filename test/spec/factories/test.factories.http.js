@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 describe("Unit: Testing Factories", function () {
 
@@ -17,19 +17,19 @@ describe("Unit: Testing Factories", function () {
 		});
 
 		it('should check existence of getDestinations method', function () {
-			expect(httpFactory.getDestinations).toBeDefined()
+			expect(httpFactory.getDestinations).toBeDefined();
 		});
 
 		it('should check existence of getVehicles method', function () {
-			expect(httpFactory.getVehicles).toBeDefined()
+			expect(httpFactory.getVehicles).toBeDefined();
 		});
 
 		it('should check existence of getToken method', function () {
-			expect(httpFactory.getToken).toBeDefined()
+			expect(httpFactory.getToken).toBeDefined();
 		});
 
 		it('should check existence of find method', function () {
-			expect(httpFactory.find).toBeDefined()
+			expect(httpFactory.find).toBeDefined();
 		});
 
 		it('should test getDestinations call', function () {
@@ -40,15 +40,15 @@ describe("Unit: Testing Factories", function () {
 						$scope.response = _data_;
 						$scope.valid = true;
 					})
-					.error(function (_data_) {
+					.error(function () {
 						$scope.valid = false;
-					})
+					});
 
 			$httpBackend.when('GET', 'https://findfalcone.herokuapp.com/planets')
 					.respond(200, [{
 							name: "Donlon",
 							distance: 100
-						}])
+						}]);
 
 			expect($httpBackend.flush).not.toThrow();
 
@@ -56,7 +56,7 @@ describe("Unit: Testing Factories", function () {
 			expect($scope.response.length).toEqual(1);
 			expect($scope.response[0].name).toBeDefined();
 			expect($scope.response[0].distance).toBeDefined();
-		})
+		});
 
 		it('should test getVehicles call', function () {
 			var $scope = {};
@@ -66,9 +66,9 @@ describe("Unit: Testing Factories", function () {
 						$scope.response = _data_;
 						$scope.valid = true;
 					})
-					.error(function (_data_) {
+					.error(function () {
 						$scope.valid = false;
-					})
+					});
 
 			$httpBackend.when('GET', 'https://findfalcone.herokuapp.com/vehicles')
 					.respond(200, [{
@@ -76,7 +76,7 @@ describe("Unit: Testing Factories", function () {
 						total_no: 2,
 						max_distance: 200,
 						speed: 2
-					}])
+					}]);
 
 			expect($httpBackend.flush).not.toThrow();
 
@@ -86,7 +86,7 @@ describe("Unit: Testing Factories", function () {
 			expect($scope.response[0].total_no).toBeDefined();
 			expect($scope.response[0].max_distance).toBeDefined();
 			expect($scope.response[0].speed).toBeDefined();
-		})
+		});
 
 		it('should test getToken call', function () {
 			var $scope = {};
@@ -96,20 +96,20 @@ describe("Unit: Testing Factories", function () {
 						$scope.response = _data_;
 						$scope.valid = true;
 					})
-					.error(function (_data_) {
+					.error(function () {
 						$scope.valid = false;
-					})
+					});
 
 			$httpBackend.when('POST', 'https://findfalcone.herokuapp.com/token')
 					.respond(200, {
 						token: 'SOMERANDOMSTRING'
-					})
+					});
 
 			expect($httpBackend.flush).not.toThrow();
 
 			expect($scope.valid).toEqual(true);
 			expect($scope.response.token).toBeDefined();
-		})
+		});
 
 		it('should test find call', function () {
 			var $scope = {};
@@ -123,9 +123,9 @@ describe("Unit: Testing Factories", function () {
 						$scope.response = _data_;
 						$scope.valid = true;
 					})
-					.error(function (_data_) {
+					.error(function () {
 						$scope.valid = false;
-					})
+					});
 
 			$httpBackend.expect('POST', 'https://findfalcone.herokuapp.com/find', {
 				"token":"SOMERANDOMSTRING",
@@ -134,12 +134,12 @@ describe("Unit: Testing Factories", function () {
 			})
 					.respond(200, {
 						success: 'true'
-					})
+					});
 
 			expect($httpBackend.flush).not.toThrow();
 
 			expect($scope.valid).toEqual(true);
-		})
+		});
 
 	});
 });

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 describe("Unit: Testing Directives", function () {
 
@@ -19,10 +19,10 @@ describe("Unit: Testing Directives", function () {
 
 		it('should check if the element was loaded', function () {
 			expect(elem).not.toEqual(null);
-		})
+		});
 
 		it('should check whether header has "Finding Falcone" written', function () {
-			expect(elem.find('a.brand-logo').html().trim()).toEqual('Finding Falcone')
-		})
+			expect(elem.find('a.brand-logo').html().trim()).toEqual('Finding Falcone');
+		});
 	});
 });

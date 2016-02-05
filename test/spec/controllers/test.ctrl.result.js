@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 describe("Unit: Testing Controllers", function () {
 
@@ -22,12 +22,12 @@ describe("Unit: Testing Controllers", function () {
 		it('should check if scope was created', function () {
 			createController();
 			expect($scope).not.toEqual(null);
-		})
+		});
 
 		it('should check if $stateParams was injected', function () {
 			createController();
 			expect($stateParams).not.toEqual(null);
-		})
+		});
 
 		it('should check if $scope contains data passed from $stateParams', function () {
 			createController();
@@ -40,6 +40,6 @@ describe("Unit: Testing Controllers", function () {
 			expect($scope.result).toEqual({ foo: 'bar' });
 			expect($scope.total_time).toEqual(100);
 
-		})
+		});
 	});
 });

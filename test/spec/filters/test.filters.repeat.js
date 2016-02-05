@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 describe("Unit: Testing Filters", function () {
 

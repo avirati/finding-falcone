@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * @author Avinash Verma
@@ -15,4 +15,4 @@ angular.module('findingFalconeApp.directives')
 			restrict: 'E',
 			templateUrl: 'views/common/templates/header.html'
 		}
-	}])
+	}]);
