@@ -30,6 +30,7 @@ $ npm install -g grunt
 $ git clone https://github.com/avirati/finding-falcone finding-falcone
 $ cd finding-falcone
 $ npm install
+$ npm install --dev (if you want to run tests) 
 $ bower install
 $ grunt
 $ cd dist/
