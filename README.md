@@ -2,6 +2,9 @@
 
 Finding Falcone is a task from GeekTrust.in
 
+![alt tag](https://raw.githubusercontent.com/avirati/finding-falcone/master/app/images/snap_1.png)
+![alt tag](https://raw.githubusercontent.com/avirati/finding-falcone/master/app/images/snap_2.png)
+
 ### Tech
 
 Dillinger uses a number of open source projects to work properly:
