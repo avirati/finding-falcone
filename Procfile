@@ -1,1 +1,1 @@
-web: grunt —-force && cd ./dist && http-server .
+grunt —-force && http-server ./dist
