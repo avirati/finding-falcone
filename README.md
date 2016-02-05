@@ -34,13 +34,17 @@ $ python -m SimpleHTTPServer <PORT>
 
 ### Run the project
 
+```sh
 open http://localhost:<PORT>
+```
 
 ### Testing
 
+```sh
 $ npm install -g karma
 $ cd test/
 $ karma start
+```
 
 License
 ----
