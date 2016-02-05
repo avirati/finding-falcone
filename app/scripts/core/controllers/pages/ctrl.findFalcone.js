@@ -2,7 +2,6 @@
 
 angular.module('findingFalconeApp')
 	.controller('ctrl.findFalcone', [ '$scope', '$state', 'httpFactory', function ($scope, $state, httpFactory) {
-		window.scope = $scope;
 		//$scope variables
 		angular.extend($scope, {
 			selectedPlanets: [],
