@@ -34,7 +34,6 @@
     "karma-jasmine": "*",
     "karma-ng-html2js-preprocessor": "^0.2.0",
     "karma-phantomjs-launcher": "*",
-    "phantomjs-prebuilt": "*",
     "time-grunt": "^1.0.0"
   },
   "engines": {
@@ -45,6 +44,9 @@
   },
   "dependencies": {
     "jasmine-core": "^2.4.1",
-    "phantomjs": "^1.9.19"
+    "phantomjs": "^1.9.19",
+    "phantomjs-prebuilt": "*",
+    "forever": "^0.15.1",
+    "http-server": "^0.8.5"
   }
 }
